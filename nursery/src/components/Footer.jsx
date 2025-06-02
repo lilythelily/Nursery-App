@@ -8,7 +8,10 @@ import email from "/assets/icons/email.svg";
 const Footer = () => {
   return (
     <footer>
-      <img src={logo} alt="logo" width="100" />
+      <NavLink to="/">
+        <img src={logo} alt="logo" width="100" />
+      </NavLink>
+
       <div className="footer-container">
         <ul className="footer-ul">
           <NavLink to="/">

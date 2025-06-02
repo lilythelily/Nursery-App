@@ -136,10 +136,12 @@ const ShoppingCart = () => {
           </button>
         </NavLink>
 
-        <button className="filled-btn3">
-          Proceed
-          <img src={rightArrowWhite} alt="arrow" />
-        </button>
+        <NavLink to="/shipping">
+          <button className="filled-btn3">
+            Proceed
+            <img src={rightArrowWhite} alt="arrow" />
+          </button>
+        </NavLink>
       </div>
     </section>
   );
