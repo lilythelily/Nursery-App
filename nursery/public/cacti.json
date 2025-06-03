@@ -4,42 +4,48 @@
       "id": 7,
       "name": "Succulents",
       "type": "Potted Plant",
-      "price": "USD 6.00",
+      "price": 6,
+      "qty": 1,
       "img": "../assets/img/cactus1.png"
     },
     {
       "id": 8,
       "name": "Cactus",
       "type": "Potted Plant",
-      "price": "USD 7.00",
+      "price": 7,
+      "qty": 1,
       "img": "../assets/img/cactus2.png"
     },
     {
       "id": 9,
       "name": "Euphorbia Lactea",
       "type": "Potted Plant",
-      "price": "USD 10.00",
+      "price": 10,
+      "qty": 1,
       "img": "../assets/img/cactus3.png"
     },
     {
       "id": 10,
       "name": "Echinocactus",
       "type": "Potted Plant",
-      "price": "USD 8.00",
+      "price": 8,
+      "qty": 1,
       "img": "../assets/img/cactus4.png"
     },
     {
       "id": 11,
       "name": "Bunny Ear Cactus",
       "type": "Potted Plant",
-      "price": "USD 9.00",
+      "price": 9,
+      "qty": 1,
       "img": "../assets/img/cactus5.png"
     },
     {
       "id": 12,
       "name": "Aristaloe",
       "type": "Potted Plant",
-      "price": "USD 6.00",
+      "price": 6,
+      "qty": 1,
       "img": "../assets/img/cactus7.png"
     }
   ]

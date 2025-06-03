@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import rightArrowGreen from "/assets/icons/arrow-right-green.svg";
 
-const Products = () => {
+const Products = ({ setCartItems }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch("/plants.json")
@@ -19,6 +19,11 @@ const Products = () => {
       .catch((error) => console.error("failed tofetch", error));
   }, []);
 
+  const handleAddToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+  };
+
+
   return (
     <section className="products">
       <h2 className="products-h2">Floor Plants</h2>
@@ -34,8 +39,13 @@ const Products = () => {
                 <p className="product-type">{item.type}</p>
               </div>
               <div className="price-btn">
-                <p className="product-price">{item.price}</p>
-                <button className="add-btn">Add to Cart</button>
+                <p className="product-price">USD {item.price.toFixed(2)}</p>
+                <button
+                  className="add-btn"
+                  onClick={() => handleAddToCart(item)}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -55,8 +65,8 @@ const Products = () => {
                 <p className="product-type">{item.type}</p>
               </div>
               <div className="price-btn">
-                <p className="product-price">{item.price}</p>
-                <button className="add-btn">Add to Cart</button>
+                <p className="product-price">USD {item.price.toFixed(2)}</p>
+                <button className="add-btn" onClick={()=>handleAddToCart(item)}>Add to Cart</button>
               </div>
             </div>
           </div>

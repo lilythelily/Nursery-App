@@ -14,6 +14,7 @@ const Confirmation = () => {
   return (
     <>
       <section className="shipping-section">
+        <div className="overlay"></div>
         <img src={progressBar3} alt="progress-bar" className="progress-bar" />
         <h2 className="cart-h2">Confirmation</h2>
         <form>
@@ -76,7 +77,7 @@ const Confirmation = () => {
 
         <div className="btns">
           <NavLink to="/products">
-            <button className="outline-btn">
+            <button className="outline-btn2">
               <img src={x} alt="x" />
               Cancel
             </button>

@@ -4,42 +4,48 @@
       "id": 1,
       "name": "Monstera",
       "type": "Potted Plant",
-      "price": "USD 12.00",
+      "price": 12,
+      "qty": 1,
       "img": "../assets/img/plants1.png"
     },
     {
       "id": 2,
       "name": "Aloe Vera",
       "type": "Potted Plant",
-      "price": "USD 11.00",
+      "price": 11,
+      "qty": 1,
       "img": "../assets/img/plants3.png"
     },
     {
       "id": 3,
       "name": "Zamiculcas",
       "type": "Potted Plant",
-      "price": "USD 8.00",
+      "price": 8,
+      "qty": 1,
       "img": "../assets/img/plants4.png"
     },
     {
       "id": 4,
       "name": "Bird's Nest Fern",
       "type": "Potted Plant",
-      "price": "USD 10.00",
+      "price": 10,
+      "qty": 1,
       "img": "../assets/img/plants5.png"
     },
     {
       "id": 5,
       "name": "Table Palm",
       "type": "Potted Plant",
-      "price": "USD 12.00",
+      "price": 12,
+      "qty": 1,
       "img": "../assets/img/plants6.png"
     },
     {
       "id": 6,
       "name": "Alocasia",
       "type": "Potted Plant",
-      "price": "USD 9.00",
+      "price": 9,
+      "qty": 1,
       "img": "../assets/img/plants7.png"
     }
   ]

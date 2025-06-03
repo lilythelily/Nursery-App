@@ -16,9 +16,8 @@ const Shipping = () => {
     <>
       <section className="shipping-section">
         <img src={progressBar2} alt="progress-bar" className="progress-bar" />
-        <h2 className="cart-h2">
-          Shipping Address<span>All fields are required.</span>
-        </h2>
+        <h2 className="cart-h2">Shipping Address</h2>
+        <p className="required">All fields are required.</p>
         <form>
           <div className="form-item">
             <label htmlFor="first-name">
@@ -73,9 +72,8 @@ const Shipping = () => {
           </div>
         </form>
 
-        <h2 className="cart-h2">
-          Payment Info<span>All fields are required.</span>
-        </h2>
+        <h2 className="cart-h2">Payment Info</h2>
+        <p className="required">All fields are required.</p>
         <form>
           <div className="form-item">
             <label htmlFor="holder">
@@ -94,30 +92,32 @@ const Shipping = () => {
               <img src={credit} alt="card" />
               Credit Card
             </label>
-            <input
-              className="short-input"
-              type="text"
-              name="card"
-              placeholder="1234"
-            ></input>
-            <input
-              className="short-input"
-              type="text"
-              name="card"
-              placeholder="1234"
-            ></input>
-            <input
-              className="short-input"
-              type="text"
-              name="card"
-              placeholder="1234"
-            ></input>
-            <input
-              className="short-input"
-              type="text"
-              name="card"
-              placeholder="1234"
-            ></input>
+            <div className="card-inputs">
+              <input
+                className="short-input"
+                type="text"
+                name="card"
+                placeholder="1234"
+              ></input>
+              <input
+                className="short-input"
+                type="text"
+                name="card"
+                placeholder="1234"
+              ></input>
+              <input
+                className="short-input"
+                type="text"
+                name="card"
+                placeholder="1234"
+              ></input>
+              <input
+                className="short-input"
+                type="text"
+                name="card"
+                placeholder="1234"
+              ></input>
+            </div>
           </div>
 
           <div className="form-item">
@@ -125,18 +125,20 @@ const Shipping = () => {
               <img src={calendar} alt="calendar" />
               Expiration
             </label>
-            <input
-              className="short-input"
-              type="text"
-              name="expiration"
-              placeholder="MM"
-            ></input>
-            <input
-              className="short-input"
-              type="text"
-              name="expiration"
-              placeholder="YY"
-            ></input>
+            <div className="card-inputs">
+              <input
+                className="short-input"
+                type="text"
+                name="expiration"
+                placeholder="MM"
+              ></input>
+              <input
+                className="short-input"
+                type="text"
+                name="expiration"
+                placeholder="YY"
+              ></input>
+            </div>
           </div>
 
           <div className="form-item">
