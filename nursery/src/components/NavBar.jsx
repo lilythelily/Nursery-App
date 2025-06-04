@@ -11,6 +11,8 @@ function NavBar({ cartQty, cartItems }) {
   const handleMenu = () => {
     setMenu(!menu);
   };
+
+
   return (
     <>
       <nav>
@@ -20,7 +22,7 @@ function NavBar({ cartQty, cartItems }) {
         <div className="ul-cart">
           <ul className="nav-bar">
             <NavLink to="/">
-              <li>Home</li>
+              <li onClose={handleMenu}>Home</li>
             </NavLink>
             <NavLink to="/products">
               <li>Products</li>
@@ -32,7 +34,6 @@ function NavBar({ cartQty, cartItems }) {
           </ul>
           <p className="cart-qty">
             {cartItems.length}
-            {/* {Object.values(cartQty).reduce((sum, q) => sum + q, 0)} */}
           </p>
           <NavLink to="/cart">
             <img src={cart} alt="cart" className="cart-icon" />

@@ -11,20 +11,20 @@ const Hamburger = ({ menu, onClose }) => {
         <img src={close} alt="x" className="close-menu" onClick={onClose} />
         <div className="part">
           <NavLink to="/">
-            <div className="menu-item">
+            <div className="menu-item" onClick={onClose}>
               <li>Home</li>
               <img src={chevron} alt="chevron" />
             </div>
           </NavLink>
           <NavLink to="/products">
-            <div className="menu-item">
+            <div className="menu-item" onClick={onClose}>
               <li>Products</li>
               <img src={chevron} alt="chevron" />
             </div>
           </NavLink>
 
           <NavLink to="/about">
-            <div className="menu-item">
+            <div className="menu-item" onClick={onClose}>
               <li>About</li>
               <img src={chevron} alt="chevron" />
             </div>
@@ -32,12 +32,12 @@ const Hamburger = ({ menu, onClose }) => {
         </div>
 
         <div className="part">
-          <div className="menu-item">
+          <div className="menu-item" >
             <li>FAQ</li>
             <img src={chevron} alt="chevron" />
           </div>
 
-          <div className="menu-item">
+          <div className="menu-item" >
             <li>Privacy Policy</li>
             <img src={chevron} alt="chevron" />
           </div>
