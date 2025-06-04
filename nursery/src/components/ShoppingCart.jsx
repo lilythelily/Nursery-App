@@ -8,31 +8,16 @@ import rightArrowWhite from "/assets/icons/arrow-right-white.svg";
 import leftArrow from "/assets/icons/arrow-left.svg";
 import EmptyCart from "./EmptyCart";
 
-const ShoppingCart = ({
-  cartItems,
-  onRemoveFromCart,
-}) => {
+const ShoppingCart = ({ cartItems, onRemoveFromCart, updateCartQty }) => {
   const [qty, setQty] = useState({});
   const [subtotal, setSubtotal] = useState(0);
   const [total, setTotal] = useState(0);
   const shipping = 5;
 
   useEffect(() => {
-    const savedQty = localStorage.getItem("cartQty");
-    if (savedQty) {
-      setQty(JSON.parse(savedQty));
-    } else {
-      const initialQty = {};
-      cartItems.forEach((item) => {
-        initialQty[item.id] = 0;
-      });
-      setQty(initialQty);
-    }
-  }, [cartItems]);
-
-  useEffect(() => {
     if (Object.keys(qty).length > 0) {
       localStorage.setItem("cartQty", JSON.stringify(qty));
+      updateCartQty(qty);
     }
   }, [qty]);
 
@@ -49,14 +34,23 @@ const ShoppingCart = ({
   }, [qty, cartItems]);
 
   const handleIncrement = (itemId) => {
-    setQty((prevQty) => ({ ...prevQty, [itemId]: (prevQty[itemId] || 0) + 1 }));
+    setQty((prevQty) => {
+      const newQty = { ...prevQty, [itemId]: (prevQty[itemId] || 0) + 1 };
+      updateCartQty(newQty);
+      return newQty;
+    });
   };
 
   const handleDecrement = (itemId) => {
-    setQty((prevQty) => ({
-      ...prevQty,
-      [itemId]: Math.max((prevQty[itemId] || 0) - 1, 1),
-    }));
+    setQty((prevQty) => {
+      const newQty = {
+        ...prevQty,
+        [itemId]: Math.max((prevQty[itemId] || 0) - 1, 1),
+      };
+
+      updateCartQty(newQty);
+      return newQty;
+    });
   };
 
   return (

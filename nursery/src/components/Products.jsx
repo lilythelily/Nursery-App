@@ -23,6 +23,10 @@ const Products = ({ setCartItems }) => {
     setCartItems((prevItems) => [...prevItems, item]);
   };
 
+  const [disabledButtons, setDisabledButtons] = useState({});
+  const handleClick = (itemId) => {
+    setDisabledButtons((prev)=>({...prev,[itemId]:true}));
+  }
 
   return (
     <section className="products">
@@ -42,7 +46,12 @@ const Products = ({ setCartItems }) => {
                 <p className="product-price">USD {item.price.toFixed(2)}</p>
                 <button
                   className="add-btn"
-                  onClick={() => handleAddToCart(item)}
+                  disabled={disabledButtons[item.id]}
+                  onClick={() => {
+                    handleAddToCart(item);
+                    handleClick(item.id);
+
+                  }}
                 >
                   Add to Cart
                 </button>
@@ -66,7 +75,16 @@ const Products = ({ setCartItems }) => {
               </div>
               <div className="price-btn">
                 <p className="product-price">USD {item.price.toFixed(2)}</p>
-                <button className="add-btn" onClick={()=>handleAddToCart(item)}>Add to Cart</button>
+                <button
+                  className="add-btn"
+                  disabled={disabledButtons[item.id]}
+                  onClick={() => {
+                    handleAddToCart(item);
+                    handleClick(item.id);
+                  }}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>

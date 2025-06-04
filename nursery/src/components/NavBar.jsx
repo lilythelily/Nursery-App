@@ -5,7 +5,7 @@ import cart from "/assets/icons/cart-outline.svg";
 import hamburger from "/assets/icons/menu-03.svg";
 import Hamburger from "./Hamburger";
 
-function NavBar({ cartItems }) {
+function NavBar({ cartQty, cartItems }) {
   const [menu, setMenu] = useState(false);
 
   const handleMenu = () => {
@@ -30,7 +30,10 @@ function NavBar({ cartItems }) {
               <li>About</li>
             </NavLink>
           </ul>
-          <p className="cart-qty">{cartItems.length}</p>
+          <p className="cart-qty">
+            {cartItems.length}
+            {/* {Object.values(cartQty).reduce((sum, q) => sum + q, 0)} */}
+          </p>
           <NavLink to="/cart">
             <img src={cart} alt="cart" className="cart-icon" />
           </NavLink>

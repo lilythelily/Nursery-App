@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router";
 import "./App.css";
 import About from "./components/About";
@@ -14,6 +14,18 @@ import Confirmation from "./components/Confirmation";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [cartQty, setCartQty] = useState(() => {
+    const savedQty = localStorage.getItem("cartQty");
+    return savedQty ? JSON.parse(savedQty) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cartQty", JSON.stringify(cartQty));
+  }, [cartQty, cartItems]);
+
+  const updateCartQty = (newQty) => {
+    setCartQty(newQty);
+  };
 
   const handleRemoveFromCart = (itemId) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
@@ -21,7 +33,7 @@ function App() {
 
   return (
     <>
-      <NavBar cartItems={cartItems} />
+      <NavBar cartItems={cartItems} cartQty={cartQty} />
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route
@@ -35,6 +47,7 @@ function App() {
             <ShoppingCart
               cartItems={cartItems}
               onRemoveFromCart={handleRemoveFromCart}
+              updateCartQty={updateCartQty}
             />
           }
         />
