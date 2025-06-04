@@ -770,6 +770,8 @@ label {
 }
 
 input {
+  font-family: 'Poppins', sans-serif;
+  color: var(--gray7);
   background-color: var(--white);
   display: inline-flex;
   width: 535px;
@@ -949,6 +951,13 @@ form {
   font-weight: 400;
   letter-spacing: 1.2px;
   text-align: center;
+}
+
+.close-modal{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor:pointer;
 }
 
 /* ==== responsive ==== */

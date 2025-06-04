@@ -43,6 +43,7 @@ const Shipping = () => {
       const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       setError(prevError => ({ ...prevError, email: !isValid }));
     }
+    localStorage.setItem("formData", JSON.stringify(formData));
   };
 
 
@@ -396,12 +397,11 @@ const Shipping = () => {
             </button>
           </NavLink>
 
-          {/* <NavLink to="/confirmation"> */}
           <button type="submit" className="filled-btn3" onClick={handleSubmit}>
             Proceed
             <img src={rightArrowWhite} alt="arrow" />
           </button>
-          {/* </NavLink> */}
+
         </div>
       </section>
     </>
