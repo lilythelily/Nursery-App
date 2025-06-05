@@ -12,6 +12,7 @@ import EmptyCart from "./components/EmptyCart";
 import Shipping from "./components/Shipping";
 import Confirmation from "./components/Confirmation";
 
+
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartQty, setCartQty] = useState(() => {

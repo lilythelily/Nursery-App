@@ -324,7 +324,7 @@ const Shipping = () => {
                 }
               ></input>
             </div>
-            {error.form && <p className="error-msg">This field is required.</p>}
+            {error.cardPart1 && <p className="error-msg">This field is required.</p>}
           </div>
           <div className="form-item">
             <label htmlFor="expiration">
@@ -365,7 +365,7 @@ const Shipping = () => {
                 }
               ></input>
             </div>
-            {error.form && <p className="error-msg">This field is required.</p>}
+            {error.expirationMonth && <p className="error-msg">This field is required.</p>}
           </div>
           <div className="form-item">
             <label htmlFor="cvc">
@@ -387,7 +387,7 @@ const Shipping = () => {
               }
             ></input>
           </div>
-          {error.form && <p className="error-msg">This field is required.</p>}
+          {error.cvc && <p className="error-msg">This field is required.</p>}
         </form>
         <div className="btns">
           <NavLink to="/products">

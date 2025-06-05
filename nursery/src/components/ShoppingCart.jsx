@@ -34,12 +34,17 @@ const ShoppingCart = ({ cartItems, onRemoveFromCart, updateCartQty }) => {
   }, [qty, cartItems]);
 
   const handleIncrement = (itemId) => {
-    setQty((prevQty) => {
-      const newQty = { ...prevQty, [itemId]: (prevQty[itemId] || 0) + 1 };
-      updateCartQty(newQty);
-      return newQty;
-    });
+    setQty((prevQty) => ({
+      ...prevQty,
+      [itemId]: (prevQty[itemId] || 0) + 1,
+    }));
   };
+
+  useEffect(() => {
+    if (Object.keys(qty).length > 0) {
+      updateCartQty(qty);
+    }
+  }, [qty]);
 
   const handleDecrement = (itemId) => {
     setQty((prevQty) => {
