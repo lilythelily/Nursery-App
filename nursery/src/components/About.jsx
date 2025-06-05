@@ -11,7 +11,7 @@ function About() {
           <div className="about-logo-text">
             <img src={logoWhite} alt="logo" />
             <h3>
-              Cultivating Wellness, <br></br>One Plant at Time.
+              Cultivating Wellness, <br></br>One Plant at a Time.
             </h3>
             <p className="about-text">
               Step into a world where nature thrives indoors at SERENE NURSERY,
